@@ -25,7 +25,7 @@
   <a class="navbar-brand" href="https://www.univ-angers.fr/fr/index.html"><img src="https://i.ibb.co/9GRXf7P/ua-h-blanc-ecran-1.png" alt="ua-h-blanc-ecran-1" border="0" style="width:140px;"></a>
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">Map</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Link</a>
@@ -33,8 +33,7 @@
   </ul>
 </nav>
  
- 
-	<div id="mapid"></div>
+<div class="container">	<div id="mapid"></div> </div>
 	<script>
         var map = L.map('mapid').setView([47.48, -0.55], 13);
         var osmLayer = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
@@ -54,12 +53,15 @@
 					return marker;
 				},
 				onEachFeature: function(feature, layer) {
-					layer.bindPopup('<h1>'+feature.properties.name+'</h1><hr><br>'
+					layer.bindPopup('<h6>'+feature.properties.name+'</h6><hr><br>'
 								   + feature.properties.description
 								   );
 				}
 			}).addTo(map);
 		});		
 	</script>
+    
+    
+    
 </body>
 </html>
